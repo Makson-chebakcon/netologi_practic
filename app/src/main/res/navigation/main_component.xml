@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_component"
+    app:startDestination="@id/startViewFragment">
+
+    <fragment
+        android:id="@+id/startViewFragment"
+        android:name="com.example.netologiproject_xml.presentation.fragments.StartViewFragment"
+        android:label="fragment_start_view"
+        tools:layout="@layout/fragment_start_view" >
+        <action
+            android:id="@+id/action_startViewFragment_to_gameViewFragment"
+            app:destination="@id/gameViewFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameViewFragment"
+        android:name="com.example.netologiproject_xml.presentation.fragments.GameViewFragment"
+        android:label="fragment_game_view"
+        tools:layout="@layout/fragment_game_view" >
+        <action
+            android:id="@+id/action_gameViewFragment_to_gameEndFragment"
+            app:destination="@id/gameEndFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameEndFragment"
+        android:name="com.example.netologiproject_xml.presentation.fragments.GameEndFragment"
+        android:label="fragment_game_end"
+        tools:layout="@layout/fragment_game_end" >
+        <action
+            android:id="@+id/action_gameEndFragment_to_gameViewFragment"
+            app:destination="@id/gameViewFragment" />
+        <action
+            android:id="@+id/action_gameEndFragment_to_startViewFragment"
+            app:destination="@id/startViewFragment" />
+    </fragment>
+</navigation>
