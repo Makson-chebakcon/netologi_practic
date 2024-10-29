@@ -1,5 +1,6 @@
 package com.example.netologiproject_xml.presentation.fragments
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,8 +34,6 @@ class StartViewFragment : Fragment(), NameDialogFragment.OnNamePassListener {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-
         // Установка OnClickListener для кнопки "Начать игру"
         binding.ButtonStartGameStartFragment.setOnClickListener {
             handleStartGameClick()
@@ -52,12 +51,6 @@ class StartViewFragment : Fragment(), NameDialogFragment.OnNamePassListener {
             val dialog = NameDialogFragment()
             dialog.setTargetFragment(this, 0)
             dialog.show(parentFragmentManager, "NameDialog")
-        }
-
-        // Подписка на изменения в userViewModel.user
-        userViewModel.user.observe(viewLifecycleOwner) { userDto ->
-            // Обработка изменений пользователя
-            // Здесь можно обновить UI, если необходимо
         }
     }
 

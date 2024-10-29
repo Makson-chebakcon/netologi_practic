@@ -56,10 +56,7 @@ class StatisticDialogFragment : DialogFragment() {
                     adapter.updateData(topUsersList) // Метод для обновления данных в адаптере
                 }
             } catch (e: Exception) {
-                // Обработка ошибок, например, вывод сообщения об ошибке
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(requireContext(), "Ошибка загрузки данных: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
+
             }
         }
     }
