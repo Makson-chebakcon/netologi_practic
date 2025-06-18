@@ -49,7 +49,7 @@ class GameEndFragment : Fragment() {
             )
 
             // Здесь получаем список и выполняем сортировку
-            val topUserList: List<TopUsersDto>? = userViewModel.topUser?.value // Используйте suspend-функцию
+            val topUserList: List<TopUsersDto>? = userViewModel.topUser?.value
             if (topUserList?.size!! > 10) {
                 userViewModel.delTopUser(topUserList?.get(10)!!)
             }

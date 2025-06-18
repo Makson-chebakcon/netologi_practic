@@ -49,18 +49,15 @@ class GameViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         speed = userViewModel.speedMouse.value?.toInt()!!
         countMouse = userViewModel.countMouse.value?.toInt()!!
-
         binding.userPoint.text = "Твои очки: $pointUser"
         speedMouse = (1f / (speed + 1))
 
         Log.e("Speed","$speedMouse")
         Log.e("Count", "$countMouse")
-
         // Генерация мышей
         repeat(countMouse) {
             constructorMouse()
         }
-
         binding.progressBar.max = (totalTime / interval).toInt()
         startTimer()
     }

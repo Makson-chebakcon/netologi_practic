@@ -44,7 +44,6 @@ class UserRepository(private val userDao: UserDao, private val topUserDao: TopUs
     }
 
     // Получение всех топ пользователей
-    // Получение всех топ пользователей
     suspend fun getAllTopUsers(): List<TopUsersDto> {
         return withContext(Dispatchers.IO) {
             topUserDao.getAllUsers()

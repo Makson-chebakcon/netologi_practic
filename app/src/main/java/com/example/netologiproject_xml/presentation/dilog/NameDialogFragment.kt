@@ -12,11 +12,9 @@ import com.example.netologiproject_xml.R
 
 class NameDialogFragment : DialogFragment() {
 
-
     interface OnNamePassListener {
         fun onNamePass(name: String)
     }
-
     private var namePassListener: OnNamePassListener? = null
 
     override fun onAttach(context: Context) {
@@ -35,18 +33,13 @@ class NameDialogFragment : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_name_dialog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         val editTextName: EditText = view.findViewById(R.id.editNameText)
         val buttonConfirm: Button = view.findViewById(R.id.buttonConfirm)
-
-
         buttonConfirm.setOnClickListener {
             val name = editTextName.text.toString()
             namePassListener?.onNamePass(name)
